@@ -1,3 +1,14 @@
-hw () {
-    echo "hello world"
+git_workspace="/c/gws"
+rgit_workspace="/g"
+
+alias egps1="$default_editor /etc/profile.d/git-prompt.sh & "
+
+gws () {
+    cd $git_workspace; 
+    if [ -z "$1" ]
+    then ls;
+    else cd ${1:-'.'};
+    fi
 }
+
+export -f gws;

@@ -1,0 +1,2 @@
+#Git goodies
+source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/git-bashrc)
