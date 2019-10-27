@@ -1,2 +1,5 @@
+#env vars go in .profile
+
 #Git goodies
 source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/git-bashrc)
+source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/gws-completion.bash)

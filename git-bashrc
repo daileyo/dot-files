@@ -8,7 +8,6 @@ gws () {
     if [ -z "$1" ]
     then ls;
     else 
-        complete -A directory $git_workspace
         cd ${1:-'.'};
     fi
 }
