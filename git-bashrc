@@ -1,4 +1,4 @@
-git_workspace="/c/gws"
+#git_workspace="C:/Documents/gws"
 rgit_workspace="/g"
 
 alias egps1="$default_editor /etc/profile.d/git-prompt.sh & "
