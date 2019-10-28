@@ -1,5 +1,4 @@
 #/usr/bin/env bash
-COLUMNS=3;
 
 _gws_completions()
 {
