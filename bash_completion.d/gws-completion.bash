@@ -9,7 +9,7 @@ _gws_completions()
 
   local commands_number=${gws_COMPLETION_COMMANDS_NUMBER:-50}
   local IFS=$'\n'
-  local suggestions=($(compgen -W "$(ls C:/Users/dergi/Documents/gws | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
+  local suggestions=($(compgen -W "$(ls $GIT_WORKSPACE | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
 
   if [ "${#suggestions[@]}" == "1" ]; then
     local number="${suggestions[0]/%\ */}"
