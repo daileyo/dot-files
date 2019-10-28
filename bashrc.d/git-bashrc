@@ -2,7 +2,7 @@ alias eggit="git config --global -e"
 alias egps1="$default_editor /etc/profile.d/git-prompt.sh >/dev/null & "
 
 gws () {
-    cd $git_workspace; 
+    cd $GIT_WORKSPACE; 
     if [ -z "$1" ]
     then ls;
     else 
