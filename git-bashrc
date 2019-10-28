@@ -1,7 +1,5 @@
-git_workspace="/c/gws"
-rgit_workspace="/g"
-
-alias egps1="$default_editor /etc/profile.d/git-prompt.sh & "
+alias eggit="git config --global -e"
+alias egps1="$default_editor /etc/profile.d/git-prompt.sh >/dev/null & "
 
 gws () {
     cd $git_workspace; 
