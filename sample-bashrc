@@ -1,12 +1,12 @@
 #env vars go in .profile
 
 #Git goodies
-source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/git-bashrc)
-source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/gws-completion.bash)
+source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/bashrc.d/git-bashrc)
+source <(curl -s https://raw.githubusercontent.com/daileyo/bashrc-include/master/bash_completion.d/gws-completion.bash)
 
 #If you get /dev/fd errors, create files with the downloads, first.  Then source them.
 #Example:
-# curl -so ~/git-bashrc https://raw.githubusercontent.com/daileyo/bashrc-include/master/git-bashrc
-# curl -so ~/gws-completion.bash https://raw.githubusercontent.com/daileyo/bashrc-include/master/gws-completion.bash
+# curl -so ~/git-bashrc https://raw.githubusercontent.com/daileyo/bashrc-include/master/bashrc.d/git-bashrc
+# curl -so ~/gws-completion.bash https://raw.githubusercontent.com/daileyo/bashrc-include/master/bash_completion.d/gws-completion.bash
 # source ~/git-bashrc
 # source ~/gws-completion.bash
