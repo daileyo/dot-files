@@ -14,9 +14,9 @@ _gws_completions()
     local number="${suggestions[0]/%\ */}"
     COMPREPLY=("$number")
   else
-    for i in "${!suggestions[@]}"; do
+    #for i in "${!suggestions[@]}"; do
       #suggestions[$i]="$(printf '%*s' "-$COLUMNS"  "${suggestions[$i]}")"
-    done
+    #done
 
     COMPREPLY=("${suggestions[@]}")
   fi
