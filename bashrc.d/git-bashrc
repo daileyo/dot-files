@@ -1,5 +1,5 @@
 alias eggit="git config --global -e"
-alias egps1="$default_editor /etc/profile.d/git-prompt.sh >/dev/null & "
+alias egps1="$default_editor ../profile.d/git-ps1.sh >/dev/null & "
 
 gws () {
     cd $GIT_WORKSPACE; 
