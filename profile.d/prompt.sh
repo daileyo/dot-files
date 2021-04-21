@@ -11,3 +11,6 @@ PS1="$PS1"'\w'                                  # current working directory
 PS1="$PS1"'\[\033[0m\]'                         # change color
 PS1="$PS1"'\n'                                  # new line
 PS1="$PS1"'$ '                                  # prompt: always $
+#git specific
+PS1="$PS1"'\[\033[36m\]'  # change color to cyan
+PS1="$PS1"'`__git_ps1`'   # bash function
