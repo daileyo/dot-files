@@ -1,3 +1,4 @@
+# prompt that is not dependent on omzsh or om-my-posh
 PS1='\n'                                        # new line
 PS1="$PS1"'\[\033[33m\e[100m\]'                 # change to blue
 PS1="$PS1"'\D{[%F] }\[\033[35m\]\D{%T}'         # add date and time
