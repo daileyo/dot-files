@@ -1,0 +1,43 @@
+# Should be set by ini-dot-files.sh  If #setme# is still here
+# either run init-dot-files.sh or set to the correct location manually
+DOT_FILES_PROJECT_DIRECTORY=##setme##
+# omzsh stuff
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="agnoster"
+plugins=(git aws docker iterm2 terraform python kubectl)
+source $ZSH/oh-my-zsh.sh
+
+# source all global variables
+for f in $DOT_FILES_PROJECT_DIRECTORY/globals/*; do source "$f"; done;
+# source all functions
+for f in $DOT_FILES_PROJECT_DIRECTORY/functions/*; do source "$f"; done;
+# source all aliases
+for f in $DOT_FILES_PROJECT_DIRECTORY/aliases/*; do source "$f"; done;
+
+#nvmconfig
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# jenv config
+eval export PATH="${HOME}.jenv/shims:${PATH}"
+export JENV_SHELL=zsh
+export JENV_LOADED=1
+unset JAVA_HOME
+unset JDK_HOME
+source '/opt/homebrew/Cellar/jenv/0.5.5_2/libexec/libexec/../completions/jenv.zsh'
+jenv rehash 2>/dev/null
+jenv refresh-plugins
+jenv() {
+  type typeset &> /dev/null && typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}
