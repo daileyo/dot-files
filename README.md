@@ -1,4 +1,4 @@
-#dot-files
+# dot-files
 
 _formerly bashrc-include_
 
@@ -42,7 +42,7 @@ _formerly bashrc-include_
 ## Usage
 Once the init scripts have been ran, the files can be interacted with normally.  The added bonus is that there is an option to track the changes to files within the project.  
 
-###Windows
+### Windows
 _TODO_
 
 The Defaulted Globals include:
