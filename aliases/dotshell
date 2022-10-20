@@ -9,6 +9,7 @@ alias edp="$DOT_EDITOR $DOT_PROJECT_HOME"
 #sourcing
 alias szrc="source ~/.zshrc"
 alias sgc="source ~/.gitconfig"
+alias sbrc="source ~/.bashrc"
 
 #history
 alias hgrep="history 100 | grep --color=auto"

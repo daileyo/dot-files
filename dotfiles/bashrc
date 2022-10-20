@@ -1,0 +1,31 @@
+#!/bin/bash
+
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/rld.omp.json)"
+export LS_COLORS="$(vivid generate snazzy)"
+
+# source all global variables
+for f in $DOT_PROJECT_HOME/globals/*; do source "$f"; done;
+# source all functions
+for f in $DOT_PROJECT_HOME/functions/*; do source "$f"; done;
+# source all aliases
+for f in $DOT_PROJECT_HOME/aliases/*; do source "$f"; done;
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+complete -C /usr/bin/terraform terraform
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
