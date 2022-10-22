@@ -1,4 +1,5 @@
 #!/bin/bash
+DOT_PROJECT_HOME=/home/daileyo/gws/dot-files
 
 eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/rld.omp.json)"
 export LS_COLORS="$(vivid generate snazzy)"
