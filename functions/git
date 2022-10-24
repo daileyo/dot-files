@@ -1,11 +1,47 @@
 # auto-complete for listing contents of the defined git workspace  
 # allows users to quickly get to git projects from any directory
-gws () {
-   cd $GIT_WORKSPACE/$1; tree -dCL 1
-}
+shell=$DSHELL
+if [ "$shell" = "bash" ]; then
 
-_gws () {
-   ((CURRENT == 2)) &&
-   _files -/ -W $GIT_WORKSPACE
-}
-compdef _gws gws
+   gws () {
+      echo "hi"
+      cd $GIT_WORKSPACE; 
+      if [ -z "$1" ]
+      then ls;
+      else 
+         cd ${1:-'.'};
+      fi
+   }
+
+   _gws_completions()
+   {
+   if [ "${#COMP_WORDS[@]}" != "2" ]; then
+      return
+   fi
+
+   local commands_number=${GWS_COMPLETION_COMMANDS_NUMBER:-50}
+   local IFS=$'\n'
+      local suggestions=($(compgen -W "$(ls $GIT_WORKSPACE | sed 's/\t//')" -- "${COMP_WORDS[1]}"))
+
+   if [ "${#suggestions[@]}" == "1" ]; then
+      local number="${suggestions[0]/%\ */}"
+      COMPREPLY=("$number")
+   else
+      COMPREPLY=("${suggestions[@]}")
+   fi
+   }
+
+   complete -F _gws_completions gws
+
+   export -f gws;
+elif [ "$shell" = "zsh" ]; then
+   gws () {
+      cd $GIT_WORKSPACE/$1; tree -dCL 1
+   }
+
+   _gws () {
+      ((CURRENT == 2)) &&
+      _files -/ -W $GIT_WORKSPACE
+   }
+   compdef _gws gws
+fi
