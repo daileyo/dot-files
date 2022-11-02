@@ -13,9 +13,14 @@
 # 	path = <path to alternate gitconfig>
 [init]
     defaultBranch = main
+[color "decorate"]
+    head = bold cyan
+    branch = dim yellow
 [alias]
-    lga = log --abbrev-commit --decorate --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset)%C(white)%s %C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-    lg 	= log --abbrev-commit --decorate --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset)%C(white)%s %C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    lga    = log --abbrev-commit --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s %C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    lg     = log --abbrev-commit --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s %C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    lm     = log --abbrev-commit --date=short --pretty=format:'%C(red)%h%C(reset) %C(bold green)%<(15)[%p]%C(reset) %<(20,trunc)%Cgreen%an%C(reset) %<(50,trunc)%s %Cblue(Comm: %cd)%C(reset) %Cblue(Auth: %ad)%C(reset)%C(auto)%d'
+    lma    = log --abbrev-commit --date=short --pretty=format:'%C(red)%h%C(reset) %C(bold green)%<(15)[%p]%C(reset) %<(20, trunc)%Cgreen%an%C(reset) %<(50,trunc)%s %Cblue(Comm: %cd)%C(reset) %Cblue(Auth: %ad)%C(reset)%(auto)%d' --all
     rename = branch -m
 [push]
 	autoSetupRemote = true
